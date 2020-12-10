@@ -14,6 +14,7 @@ async def on_message(message):
     await message.channel.send('メッセージ1_')
     #embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
     # title = message.category.name + ' ' + message.channel.name + ' ' + message.author.name
+    await message.channel.send('メッセージ1.25 ' + message.channel.category_id)
     category = bot.get_channel(message.channel.category_id)
     await message.channel.send('メッセージ1.5' + category.name)
     await message.channel.send(title)
