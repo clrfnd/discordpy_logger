@@ -9,7 +9,6 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    if  == '/aiueo':
-        await message.channel.send('メッセージ')
+    await message.channel.send('メッセージ')
         
 bot.run(token)
