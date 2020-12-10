@@ -14,7 +14,7 @@ async def on_message(message):
         return
     if  == '/aiueo':
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('[' + message.channel + ']' + message.name + ':' + message.name)
+        await channel.send('メッセージ')
         
 async def handle_channel(c):
     CHANNEL_ID = c
