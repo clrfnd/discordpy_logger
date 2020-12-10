@@ -11,8 +11,8 @@ async def on_message(message):
         return
     # メッセージ1
     await message.channel.send('メッセージ1')
-    # embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
-    # channel = bot.get_channel(CHANNEL_ID)
-    # await channel.send(embed=embed)
+    embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
+    channel = bot.get_channel(CHANNEL_ID)
+    await channel.send(embed=embed)
         
 bot.run(token)
