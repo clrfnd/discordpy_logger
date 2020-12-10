@@ -5,7 +5,7 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-groval noticechannel
+groval CHANNEL_ID = 786716037718474752
 
 @bot.event
 async def on_message(message):
@@ -13,9 +13,10 @@ async def on_message(message):
     if message.author.bot:
         return
     if  == '/aiueo':
-        await '[' + message.channel + ']' + message.name + ':' + message.name
+        channel = client.get_channel(CHANNEL_ID)
+        await channel.send('[' + message.channel + ']' + message.name + ':' + message.name)
         
 async def handle_channel(c)
-    noticechannel = c
+    CHANNEL_ID = c
 
 bot.run(token)
