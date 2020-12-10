@@ -12,6 +12,6 @@ async def on_message(message):
     # メッセージ1
     await message.channel.send('メッセージ1')
     channel = bot.get_channel(CHANNEL_ID)
-    await channel.send('メッセージ2')
+    await channel.send(message.channel.name + ' ' + message.content)
         
 bot.run(token)
