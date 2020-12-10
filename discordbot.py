@@ -11,7 +11,8 @@ async def on_message(message):
         return
     # メッセージ1
     await message.channel.send('メッセージ1')
+    text = f'{new_channel.mention} を作成しました'
     channel = bot.get_channel(CHANNEL_ID)
-    await channel.send('(#' + message.channel.name + ' ' + message.author.name + 'さん)' + message.content)
+    await channel.send('( #' + message.channel.name + ' ' + message.author.name + 'さん)' + message.content)
         
 bot.run(token)
