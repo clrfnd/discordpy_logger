@@ -4,7 +4,7 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-global CHANNEL_ID = 786716037718474752
+CHANNEL_ID = 786716037718474752
 
 @bot.event
 async def on_message(message):
@@ -14,8 +14,5 @@ async def on_message(message):
     if  == '/aiueo':
         channel = client.get_channel(CHANNEL_ID)
         await channel.send('メッセージ')
-        
-async def handle_channel(c):
-    CHANNEL_ID = c
 
 bot.run(token)
