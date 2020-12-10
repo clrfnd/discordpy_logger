@@ -5,7 +5,7 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-groval CHANNEL_ID = 786716037718474752
+global CHANNEL_ID = 786716037718474752
 
 @bot.event
 async def on_message(message):
