@@ -1,6 +1,5 @@
-from discord.ext import commands
 import discord
-import os
+from discord.ext import commands
 import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -12,7 +11,7 @@ async def on_message(message):
         return
     # メッセージ1
     await message.channel.send('メッセージ1')
-       embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
+    embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send(embed=embed)
         
