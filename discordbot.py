@@ -16,7 +16,7 @@ async def on_message(message):
         channel = client.get_channel(CHANNEL_ID)
         await channel.send('[' + message.channel + ']' + message.name + ':' + message.name)
         
-async def handle_channel(c)
+async def handle_channel(c):
     CHANNEL_ID = c
 
 bot.run(token)
