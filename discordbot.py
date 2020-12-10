@@ -1,5 +1,6 @@
 from discord.ext import commands
 import traceback
+import os
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 CHANNEL_ID = 786716037718474752
