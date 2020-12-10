@@ -13,7 +13,7 @@ async def on_message(message):
     # メッセージ1
     await message.channel.send('メッセージ1')
     #embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
-    embed = discord.Embed(title= message.category.name + " " + message.channel.name + " " + message.author.name ,description=f"{message.content}"[メッセージへ]({message.jump_url})")
+    embed = discord.Embed(title= message.category.name + " " + message.channel.name + " " + message.author.name ,description=f"{message.content}[メッセージへ]({message.jump_url})")
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send(embed=embed)
         
