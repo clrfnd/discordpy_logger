@@ -9,7 +9,8 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    channel = client.get_channel(CHANNEL_ID)
-    await channel.send('メッセージ')
+    await channel.send('メッセージ1')
+    channel = bot.get_channel(CHANNEL_ID)
+    await channel.send('メッセージ2')
         
 bot.run(token)
