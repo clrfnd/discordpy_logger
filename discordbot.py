@@ -15,7 +15,7 @@ async def on_message(message):
     #embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
     
     
-    if message.channel == BROADCAST_CHANNEL_ID:
+    if message.channel.id == BROADCAST_CHANNEL_ID:
         if message.content[:3] == "YKZ":
             bchannel = bot.get_channel(BROADCAST_CHANNEL_ID)
             await bchannel.send(message.content[3:])
