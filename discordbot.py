@@ -20,10 +20,12 @@ async def on_message(message):
         if message.content[:3] == "YKZ":
             bchannel = bot.get_channel(BROADCASTOUT_CHANNEL_ID)
             await bchannel.send(message.content[3:])
+            await message.channel.send("放送に成功しました。")
             return 
         elif message.content[:3] == "TRI":
             ichannel = bot.get_channel(INTRODUCE_CHANNEL_ID)
             await ichannel.send(message.content[3:])
+            await message.channel.send("しおりへのテキスト投稿に成功しました。")
             return 
         else:
             await message.channel.send("放送に失敗しました。先頭にYKZを入れることで放送できます。")
