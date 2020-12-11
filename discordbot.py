@@ -4,7 +4,7 @@ import traceback
 import os
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-CHANNEL_ID = 786716037718474752
+CHANNEL_ID = 786696510439817226
 @bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
@@ -15,8 +15,8 @@ async def on_message(message):
     
     category = ''
     if message.channel.category_id:
-        category = bot.get_channel(message.channel.category_id).name
-    title = '[' + category + ' ' + message.channel.name + '] ' + message.author.name
+        category = bot.get_channel(message.channel.category_id).name + ' '
+    title = '[' + category + message.channel.name + '] ' + message.author.name
     # embed = discord.Embed(title=title,description=f"[メッセージへ]({message.jump_url})")    
     embed = discord.Embed(title=title,description= message.content + "\n" + f"[jump]({message.jump_url})")
     channel = bot.get_channel(CHANNEL_ID)
