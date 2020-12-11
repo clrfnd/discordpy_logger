@@ -5,7 +5,8 @@ import os
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 LOG_CHANNEL_ID = 786696510439817226
-BROADCAST_CHANNEL_ID = 786664256040730674
+BROADCASTIN_CHANNEL_ID = 786757394754568233
+BROADCASTOUT_CHANNEL_ID = 786664256040730674
 @bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
@@ -15,9 +16,9 @@ async def on_message(message):
     #embed = discord.Embed(title="リンク集",description=f"メッセージのURLは [こちら]({message.jump_url}) をクリックしてください。")
     
     
-    if message.channel.id == BROADCAST_CHANNEL_ID:
+    if message.channel.id == BROADCASTIN_CHANNEL_ID:
         if message.content[:3] == "YKZ":
-            bchannel = bot.get_channel(BROADCAST_CHANNEL_ID)
+            bchannel = bot.get_channel(BROADCASTOUT_CHANNEL_ID)
             await bchannel.send(message.content[3:])
             return 
         else:
