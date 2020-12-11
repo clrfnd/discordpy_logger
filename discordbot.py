@@ -19,7 +19,8 @@ async def on_message(message):
         await message.channel.send('メッセージ1.25')
         category = bot.get_channel(message.channel.category_id).name
     title = category + ' ' + message.channel.name + ' ' + message.author.name
-    embed = discord.Embed(title=title,description=f"[メッセージへ]({message.jump_url})")    
+    # embed = discord.Embed(title=title,description=f"[メッセージへ]({message.jump_url})")    
+    embed = discord.Embed(title=title,description= message.content + f"[jump]({message.jump_url})")    
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send(embed=embed)
         
