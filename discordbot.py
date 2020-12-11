@@ -16,7 +16,7 @@ async def on_message(message):
     # title = message.category.name + ' ' + message.channel.name + ' ' + message.author.name
     category = ''
     if message.channel.category_id:
-        await message.channel.send('メッセージ1.25 ' + message.channel.category_id)
+        await message.channel.send('メッセージ1.25')
         category = bot.get_channel(message.channel.category_id).name
     await message.channel.send('メッセージ1.5' + category)
     await message.channel.send(title)
