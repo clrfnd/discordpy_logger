@@ -21,7 +21,7 @@ async def on_message(message):
             await bchannel.send(message.content[3:])
             return 
         else:
-            await bchannel.send("放送に失敗しました。先頭にYKZを入れることで放送できます。")
+            await message.channel.send("放送に失敗しました。先頭にYKZを入れることで放送できます。")
             return 
     category = ''
     if message.channel.category_id:
