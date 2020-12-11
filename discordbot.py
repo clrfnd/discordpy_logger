@@ -5,7 +5,7 @@ import os
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 LOG_CHANNEL_ID = 786696510439817226
-BROADCAST_CHANNEL_ID = 786757394754568233
+BROADCAST_CHANNEL_ID = 786664256040730674
 @bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
