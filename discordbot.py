@@ -43,15 +43,14 @@ async def on_message(message):
 
 @bot.event
 async def on_reaction_add(reaction, user):
-    #category = ''
-    #if reaction.message.channel.category_id:
-    #    category = bot.get_channel(reaction.message.channel.category_id).name + ' '
-    #title = '[' + category + reaction.message.channel.name + '] ' + user.name + 'さんがリアクションしました。'
-    #description = str(reaction) + "\n" + f"[jump]({reaction.message.jump_url})"
-    #embed = discord.Embed(title=title,description=description)
-    Lchannel = bot.get_channel(LOG_CHANNEL_ID)
-    #await channel.send(embed=embed)
-    await Lchannel.send('リアクションを検知')
+    category = ''
+    if reaction.message.channel.category_id:
+        category = bot.get_channel(reaction.message.channel.category_id).name + ' '
+    title = '[' + category + reaction.message.channel.name + '] ' + user.name + 'さんがリアクションしました。'
+    description = str(reaction) + "\n" + f"[jump]({reaction.message.jump_url})"
+    embed = discord.Embed(title=title,description=description)
+    channel = bot.get_channel(LOG_CHANNEL_ID)
+    await channel.send(embed=embed)
     
 
 bot.run(token)
