@@ -47,7 +47,8 @@ async def on_reaction_add(reaction, user):
     if reaction.message.channel.category_id:
         category = bot.get_channel(reaction.message.channel.category_id).name + ' '
     title = '[' + category + reaction.message.channel.name + '] ' + user.name + 'さんがリアクションしました。'
-    embed = discord.Embed(title=title,description= f"{reaction.emoji.name}\n" + f"[jump]({reaction.message.jump_url})")
+    description = str(reaction) + "\n" + f"[jump]({reaction.message.jump_url})"
+    embed = discord.Embed(title=title,description=description)
     channel = bot.get_channel(LOG_CHANNEL_ID)
     await channel.send(embed=embed)
     
