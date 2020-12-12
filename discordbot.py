@@ -9,6 +9,8 @@ BROADCASTIN_CHANNEL_ID = 786757394754568233
 BROADCASTOUT_CHANNEL_ID = 786664256040730674
 INTRODUCE_CHANNEL_ID = 786661109247115285
 LOBBY_CHANNEL_ID = 786664600967315504
+
+    
 @bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
@@ -38,5 +40,16 @@ async def on_message(message):
     embed = discord.Embed(title=title,description= message.content + "\n" + f"[jump]({message.jump_url})")
     channel = bot.get_channel(LOG_CHANNEL_ID)
     await channel.send(embed=embed)
-        
+
+@bot.event
+async def on_reaction_add(reaction, user):
+    category = ''
+    if reaction.message.channel.category_id:
+        category = bot.get_channel(reaction.message.channel.category_id).name + ' '
+    title = '[' + category + reaction.message.channel.name + '] ' + user.name + 'さんがリアクションしました。'
+    embed = discord.Embed(title=title,description= reaction.emoji + "\n" + f"[jump]({reaction.message.jump_url})")
+    channel = bot.get_channel(LOG_CHANNEL_ID)
+    await channel.send(embed=embed)
+    
+
 bot.run(token)
